@@ -47,7 +47,7 @@ export default App;
 
 | Prop       | Type       | Default   | Description                   |
 | ---------- | ---------- | --------- | ----------------------------- |
-| `value`    | `number`   | `0`       | Current value of the input    |
+| `value`    | `string`   | `'1234'`  | Current value of the input    |
 | `onChange` | `function` | -         | Callback when value changes   |
 | `locale`   | `string`   | `'en-US'` | Locale for formatting numbers |
 
@@ -66,4 +66,4 @@ This will format the input like `1.234,56 €` for German locale.
 
 ## License
 
-MIT © [Your Name]
+MIT © Amin Dasoomi
