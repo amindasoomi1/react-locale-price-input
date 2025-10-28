@@ -1,0 +1,59 @@
+{
+  "name": "react-locale-price-input",
+  "description": "Smart and lightweight React component for handling localized price inputs with automatic thousand separators and decimal formatting.",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react",
+    "input",
+    "number",
+    "formatted-input",
+    "formatted-number",
+    "intl",
+    "locale",
+    "currency",
+    "decimal",
+    "number-format",
+    "react-component",
+    "numeric-input",
+    "thousand-separator",
+    "decimal-separator",
+    "fa-IR",
+    "persian-number",
+    "react-hook-form",
+    "controlled-input",
+    "typescript"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "release": "npm run build && npm version patch --no-git-tag-version --no-commit-hooks && npm publish"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "typescript": "^5.2.2",
+    "vite": "^7.1.12",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "author": "Amin Dasoomi",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amindasoomi1/react-locale-price-input.git"
+  }
+}
