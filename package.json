@@ -1,10 +1,10 @@
 {
   "name": "react-locale-price-input",
   "description": "Smart and lightweight React component for handling localized price inputs with automatic thousand separators and decimal formatting.",
-  "version": "0.0.3",
+  "version": "0.0.7",
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -30,30 +30,33 @@
     "controlled-input",
     "typescript"
   ],
-  "scripts": {
-    "build": "tsc && vite build",
-    "release": "npm run build && npm version patch --no-git-tag-version --no-commit-hooks && npm publish"
-  },
-  "peerDependencies": {
-    "react": ">=18 <20",
-    "react-dom": ">=18 <20"
-  },
-  "devDependencies": {
-    "@types/react": "^18 || ^19",
-    "@types/react-dom": "^18 || ^19",
-    "@typescript-eslint/eslint-plugin": "^6.14.0",
-    "@typescript-eslint/parser": "^6.14.0",
-    "@vitejs/plugin-react-swc": "^3.5.0",
-    "eslint": "^8.55.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "typescript": "^5.2.2",
-    "vite": "^7.1.12",
-    "vite-plugin-dts": "^4.5.4"
-  },
   "author": "Amin Dasoomi",
   "repository": {
     "type": "git",
     "url": "https://github.com/amindasoomi1/react-locale-price-input.git"
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "release": "npm run build && npm version patch --no-git-tag-version --no-commit-hooks && npm publish"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.42",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "typescript": "^5.2.2",
+    "vite": "^7.1.12",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": false
+    },
+    "react-dom": {
+      "optional": false
+    }
   }
 }

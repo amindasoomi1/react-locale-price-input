@@ -1,3 +1,4 @@
+"use client";
 import { ChangeEvent, ComponentProps, useMemo } from "react";
 import formatNumberForLocale from "./formatNumberForLocale";
 import getNumberSeparators from "./getNumberSeparators";
