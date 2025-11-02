@@ -34,6 +34,7 @@ function App() {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
         locale="en-US"
+        maximumFractionDigits={2}
       />
       <p>Price value: {price}</p>
     </div>
@@ -45,11 +46,12 @@ export default App;
 
 ## Props
 
-| Prop       | Type       | Default   | Description                   |
-| ---------- | ---------- | --------- | ----------------------------- |
-| `value`    | `string`   | `'1234'`  | Current value of the input    |
-| `onChange` | `function` | -         | Callback when value changes   |
-| `locale`   | `string`   | `'en-US'` | Locale for formatting numbers |
+| Prop                    | Type       | Default   | Description                   |
+| ----------------------- | ---------- | --------- | ----------------------------- |
+| `value`                 | `string`   | `'1234'`  | Current value of the input    |
+| `onChange`              | `function` | -         | Callback when value changes   |
+| `locale`                | `string`   | `'en-US'` | Locale for formatting numbers |
+| `maximumFractionDigits` | `number`   | `2`       | Maximum fraction digits       |
 
 ## Example
 

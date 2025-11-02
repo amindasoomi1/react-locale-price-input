@@ -1,7 +1,7 @@
 {
   "name": "react-locale-price-input",
   "description": "Smart and lightweight React component for handling localized price inputs with automatic thousand separators and decimal formatting.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -37,6 +37,7 @@
   },
   "scripts": {
     "build": "tsc && vite build",
+    "pack": "tsc && npm run build && npm pack",
     "release": "npm run build && npm version patch --no-git-tag-version --no-commit-hooks && npm publish"
   },
   "devDependencies": {

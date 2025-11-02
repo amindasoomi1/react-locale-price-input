@@ -6,13 +6,19 @@ import replaceNonDigits from "./replaceNonDigits";
 import replacePersianNumbers from "./replacePersianNumber";
 import sanitizeNumberInput from "./sanitizeNumberInput";
 
-type BaseProps = { value?: string; locale?: string; type?: never };
+type BaseProps = {
+  value?: string;
+  locale?: string;
+  maximumFractionDigits?: number;
+  type?: never;
+};
 type Props = BaseProps & Omit<ComponentProps<"input">, keyof BaseProps>;
 
 export default function LocalePriceInput({
-  locale = "en-US",
   value,
   onChange,
+  locale = "en-US",
+  maximumFractionDigits = 2,
   ...props
 }: Props) {
   const { groupSeparator, decimalSeparator } = useMemo(() => {
@@ -25,9 +31,10 @@ export default function LocalePriceInput({
       locale,
       groupSeparator,
       decimalSeparator,
+      maximumFractionDigits,
     });
     return replacePersianNumbers(result);
-  }, [value, locale, groupSeparator, decimalSeparator]);
+  }, [value, locale, groupSeparator, decimalSeparator, maximumFractionDigits]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -36,6 +43,7 @@ export default function LocalePriceInput({
       locale,
       groupSeparator,
       decimalSeparator,
+      maximumFractionDigits,
     });
     const cleanValue = replaceNonDigits(replacePersianNumbers(sanitizedValue));
     onChange?.({
@@ -43,7 +51,6 @@ export default function LocalePriceInput({
       target: { ...e.target, value: cleanValue },
       currentTarget: { ...e.currentTarget, value: cleanValue },
     });
-    // onChange?.({...e,target:{...e.target}});
   };
 
   return (

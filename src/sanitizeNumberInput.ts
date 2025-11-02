@@ -3,6 +3,7 @@ type Options = {
   locale: string;
   groupSeparator: string;
   decimalSeparator: string;
+  maximumFractionDigits: number;
 };
 
 export default function sanitizeNumberInput({
@@ -10,14 +11,15 @@ export default function sanitizeNumberInput({
   //   locale,
   groupSeparator,
   decimalSeparator,
+  maximumFractionDigits,
 }: Options) {
   if (!value) return "";
   const [int, decimal = null] = value.split(decimalSeparator);
-  const hasDecimal = decimal !== null;
+  const hasDecimal = decimal !== null && !!maximumFractionDigits;
   if (hasDecimal) {
     return [
       int.replace(new RegExp(`\\${groupSeparator}`, "g"), ""),
-      decimal.slice(0, 2),
+      decimal.slice(0, maximumFractionDigits),
     ].join(".");
   }
   return int.replace(new RegExp(`\\${groupSeparator}`, "g"), "");
